@@ -1,7 +1,8 @@
 # JavaScript-Module-1
+Melhorar nomes das variáveis usadas no código para evitar erros de Clean code no processo de desenvolvimento.
+
 
 ## Operadores
-
 - 1 == 1   - igual em valor
 - 1 === 1  - Igual em valor e tipo
 - 10 >= 1  - Maior igual
