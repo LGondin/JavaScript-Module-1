@@ -7,7 +7,6 @@
 - 10 >= 1  - Maior igual
 - 1 <= 10  - Menor igual
 - 1 != 1   - Diferente em valor
-- 1 !== 1  - Diferente em valor e tipo
 - 10 > 1   - Maior que 
 - 1 < 10   - Menor que 
 
