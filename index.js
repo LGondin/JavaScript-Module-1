@@ -1,20 +1,3 @@
-// ---------------------------------------------------- Operadores -------------------------------------------------------
-
-// 1 == 1   - igual em valor
-// 1 === 1  - Igual em valor e tipo
-// 10 >= 1  - Maior igual
-// 1 <= 10  - Menor igual
-// 1 != 1   - Diferente em valor
-// 1 !== 1  - Diferente em valor e tipo
-// 10 > 1   - Maior que 
-// 1 < 10   - Menor que 
-
-// +=       - Soma
-// -=       - Subtração
-// *=       - multiplicação
-// /=       - divisão 
-
-
 // ---------------------------------------------------- Licao de casa ----------------------------------------------------
 //  Quantos itens cujo valor é positivo  - 26 itens
 //  Quantos itens o valor esta entre 100 e 200  - 4 empresas
@@ -151,7 +134,9 @@ var acoes = [{
 
 // for (var index = 0; index < acoes.length; index++) {
 //     var acao_atual = acoes[index]
-//     if (acoes[index].value >= 0) {
+//     var acao_positiva = acoes[index].value >= 0
+
+//     if (acao_positiva) {
 //         ibov++
 //     }
 // }
@@ -165,12 +150,16 @@ var acoes = [{
 
 // for (var index = 0; index < acoes.length; index++) {
 //     var acao_atual = acoes[index]
-//     if (acoes[index].value >= 100 && acoes[index].value <= 200) {
+//     var acao_value = acao_atual.value
+//     var acao_maior_ou_igual_a_cem = acao_value >= 100
+//     var acao_menor_ou_igual_a_duzentos = acao_value <= 200
+    
+//     if (acao_maior_ou_igual_a_cem && acao_menor_ou_igual_a_duzentos) {
 //         ibov++
 //     }
 // }
 
-// console.log(ibov)
+// console.log('100 e 200', ibov) 
 
 //----------------------------------------------------------------------------------------------------------------
 
@@ -180,8 +169,9 @@ var acoes = [{
 // for (var index = 0; index < acoes.length; index++) {
 //     var acao_atual = acoes[index]
 //     var enterprise_inc = acao_atual.enterprise.includes('Inc')
-//     var value_money = acao_atual.value >= 300
-//     if (enterprise_inc && value_money) {
+//     var is_value_money_acceptable = acao_atual.value >= 300
+
+//     if (enterprise_inc && is_value_money_acceptable) {
 //         console.log(acao_atual)
 //     }
 // }
@@ -191,22 +181,22 @@ var acoes = [{
 
 
 // //  O valor total da soma dos itens - 10469
-// var ibov = 0
+// var result = 0
 
 // for (var index = 0; index < acoes.length; index++) {
-//     var acao_atual = acoes[index].value
+//     var acao_atual = acoes[index]
+//     var value_acao_atual = acao_atual.value
 
-//     ibov += acao_atual;
-
+//     result += value_acao_atual;
 // }
 
-// console.log(ibov)
+// console.log(result)
 
 
 //----------------------------------------------------------------------------------------------------------------
 
 
-// //  O valor total da soma dos itens em reais - Considerando a cotacao de R$5,32 o dólar
+// O valor total da soma dos itens em reais - Considerando a cotacao de R$ 5,32 o dólar
 // var ibov = 0
 
 // for (var index = 0; index < acoes.length; index++) {
@@ -216,7 +206,8 @@ var acoes = [{
 
 // }
 
+// // bonus point :star
 // var cotacao = 5.32
-// ibov = ibov *= cotacao
+// ibov = ibov * cotacao
 
 // console.log(ibov)
