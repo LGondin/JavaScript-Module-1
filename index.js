@@ -130,84 +130,76 @@ var acoes = [{
 //----------------------------------------------------------------------------------------------------------------
 
 //Quantos itens cujo valor é positivo - 26 Itens
-// var ibov = 0
+// forEach
+// filter
 
-// for (var index = 0; index < acoes.length; index++) {
-//     var acao_atual = acoes[index]
-//     var acao_positiva = acoes[index].value >= 0
+var ibov = 0
 
-//     if (acao_positiva) {
-//         ibov++
-//     }
-// }
+acoes.forEach(function (acao_atual) {
+    var acao_positiva = acao_atual.value >= 0
+    if (acao_positiva) {
+        ibov++
+    }
+})
 
-// console.log(ibov)
+console.log(ibov)
 
 //----------------------------------------------------------------------------------------------------------------
 
 //  Quantos itens o valor esta entre 100 e 200  - 4 empresas
-// var ibov = 0
+var ibov = 0
 
-// for (var index = 0; index < acoes.length; index++) {
-//     var acao_atual = acoes[index]
-//     var acao_value = acao_atual.value
-//     var acao_maior_ou_igual_a_cem = acao_value >= 100
-//     var acao_menor_ou_igual_a_duzentos = acao_value <= 200
+acoes.forEach(function (acao_atual) {
+    var acao_value = acao_atual.value
+    var acao_maior_ou_igual_a_cem = acao_value >= 100
+    var acao_menor_ou_igual_a_duzentos = acao_value <= 200
     
-//     if (acao_maior_ou_igual_a_cem && acao_menor_ou_igual_a_duzentos) {
-//         ibov++
-//     }
-// }
+    if (acao_maior_ou_igual_a_cem && acao_menor_ou_igual_a_duzentos) {
+        ibov++
+    }
+})
 
-// console.log('100 e 200', ibov) 
+console.log('100 e 200', ibov) 
 
 //----------------------------------------------------------------------------------------------------------------
 
 //  Quais os itens terminam com "inc" e o valor é maior de 300
-// var ibov = 0
+var ibov = 0
 
-// for (var index = 0; index < acoes.length; index++) {
-//     var acao_atual = acoes[index]
-//     var enterprise_inc = acao_atual.enterprise.includes('Inc')
-//     var is_value_money_acceptable = acao_atual.value >= 300
+acoes.forEach(function (acao_atual) {
+    var enterprise_inc = acao_atual.enterprise.includes('Inc')
+    var is_value_money_acceptable = acao_atual.value >= 300
 
-//     if (enterprise_inc && is_value_money_acceptable) {
-//         console.log(acao_atual)
-//     }
-// }
-
+    if (enterprise_inc && is_value_money_acceptable) {
+        console.log(acao_atual)
+    }
+})
 
 //----------------------------------------------------------------------------------------------------------------
 
 
 // //  O valor total da soma dos itens - 10469
-// var result = 0
+var result = 0
 
-// for (var index = 0; index < acoes.length; index++) {
-//     var acao_atual = acoes[index]
-//     var value_acao_atual = acao_atual.value
+acoes.forEach(function (acao_atual) {
+    var value_acao_atual = acao_atual.value
+    result += value_acao_atual;
+})
 
-//     result += value_acao_atual;
-// }
-
-// console.log(result)
+console.log(result)
 
 
 //----------------------------------------------------------------------------------------------------------------
 
 
 // O valor total da soma dos itens em reais - Considerando a cotacao de R$ 5,32 o dólar
-// var ibov = 0
+var ibov = 0
 
-// for (var index = 0; index < acoes.length; index++) {
-//     var acao_atual = acoes[index].value
-
-//     ibov += acao_atual;
-
-// }
-
+acoes.forEach(function (acao_atual) {
+  ibov += acao_atual.value;
+})
 // // bonus point :star
-// var cotacao = 5.32
-// ibov = ibov * cotacao
+var cotacao = 5.32
+ibov = ibov * cotacao
 
-// console.log(ibov)
+console.log(ibov)
