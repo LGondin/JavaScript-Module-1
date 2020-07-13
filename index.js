@@ -129,77 +129,61 @@ var acoes = [{
 
 //----------------------------------------------------------------------------------------------------------------
 
-//Quantos itens cujo valor é positivo - 26 Itens
+// Quantos itens cujo valor é positivo - 26 Itens
 // forEach
 // filter
 
-var ibov = 0
-
-acoes.forEach(function (acao_atual) {
-    var acao_positiva = acao_atual.value >= 0
-    if (acao_positiva) {
-        ibov++
-    }
+var result = acoes.filter(function (acao_atual) {
+    return acao_atual.value >= 0
 })
 
-console.log(ibov)
+console.log(result.length)
 
 //----------------------------------------------------------------------------------------------------------------
 
 //  Quantos itens o valor esta entre 100 e 200  - 4 empresas
-var ibov = 0
-
-acoes.forEach(function (acao_atual) {
+var result = acoes.filter(function (acao_atual) {
     var acao_value = acao_atual.value
     var acao_maior_ou_igual_a_cem = acao_value >= 100
     var acao_menor_ou_igual_a_duzentos = acao_value <= 200
     
-    if (acao_maior_ou_igual_a_cem && acao_menor_ou_igual_a_duzentos) {
-        ibov++
-    }
+    return acao_maior_ou_igual_a_cem && acao_menor_ou_igual_a_duzentos
 })
 
-console.log('100 e 200', ibov) 
+console.log('100 e 200', result.length) 
 
-//----------------------------------------------------------------------------------------------------------------
+// //----------------------------------------------------------------------------------------------------------------
 
-//  Quais os itens terminam com "inc" e o valor é maior de 300
-var ibov = 0
-
-acoes.forEach(function (acao_atual) {
+// //  Quais os itens terminam com "inc" e o valor é maior de 300
+ filter
+var result = acoes.filter(function (acao_atual) {
     var enterprise_inc = acao_atual.enterprise.includes('Inc')
     var is_value_money_acceptable = acao_atual.value >= 300
 
-    if (enterprise_inc && is_value_money_acceptable) {
-        console.log(acao_atual)
-    }
+    return enterprise_inc && is_value_money_acceptable
 })
+console.log('items terminam com inc ...', result)
 
 //----------------------------------------------------------------------------------------------------------------
 
+//  O valor total da soma dos itens - 10469
+//  reduce
+var result = acoes.reduce(function (acumulator, acao_atual) {
+    return acumulator + acao_atual.value;
+}, 0)
 
-// //  O valor total da soma dos itens - 10469
-var result = 0
-
-acoes.forEach(function (acao_atual) {
-    var value_acao_atual = acao_atual.value
-    result += value_acao_atual;
-})
-
-console.log(result)
+console.log('O valor total da soma dos itens -', result)
 
 
 //----------------------------------------------------------------------------------------------------------------
-
 
 // O valor total da soma dos itens em reais - Considerando a cotacao de R$ 5,32 o dólar
-var ibov = 0
 
-acoes.forEach(function (acao_atual) {
-  ibov += acao_atual.value;
-})
-// // bonus point :star
+const result = acoes.reduce(function (acumulator, acao_atual) {
+  return acumulator + acao_atual.value;
+}, 0)
+
+// bonus point :star
 var cotacao = 5.32
-ibov = ibov * cotacao
 
-console.log(ibov)
+console.log(result * cotacao)
